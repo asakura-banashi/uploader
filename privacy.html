@@ -14,21 +14,31 @@
 </head>
 <body>
 <h1>プライバシーポリシー</h1>
-<p>最終更新日: 2026年10月9日</p>
+<p>最終更新日: 2026年10月12日</p>
 
 <h2>このツールについて</h2>
-<p>asakura-uploader（以下「本ツール」）は、YouTube チャンネル「あさくら話」の運営者が、自分のチャンネルへ動画を投稿するためだけに使う個人用のツールです。運営者以外の利用者はいません。</p>
+<p>asakura-uploader（以下「本ツール」）は、YouTube チャンネル「あさくら話」の運営者が、自分のチャンネルを運営するためだけに使う個人用のツールです。運営者以外の利用者はいません。</p>
 
 <h2>使う情報と目的</h2>
+<p>本ツールは YouTube API サービスを使い、Google の OAuth で運営者が許可した範囲で、次のことを行います。</p>
 <ul>
-  <li>本ツールは YouTube API サービスを使い、Google の OAuth で許可された範囲（<code>youtube.upload</code>）で、運営者自身のチャンネルへ動画と、そのタイトル・説明文・タグ・公開設定を送ります。</li>
-  <li>他の利用者や視聴者の個人情報は、取得も保存もしません。</li>
+  <li><strong>動画の投稿</strong>（<code>youtube.upload</code>）: 運営者自身のチャンネルへ、動画とそのタイトル・説明文・タグ・公開設定を送ります。</li>
+  <li><strong>コメントへの返信</strong>（<code>youtube.force-ssl</code>）: 運営者自身の動画に付いたコメント（コメントとスレッドの ID、動画の ID、投稿者の表示名、本文、投稿日時）を読み込み、返信の下書きを作ります。返信は、運営者が一件ずつ内容を確認して承認したものだけを投稿します。自動の一斉返信は行いません。</li>
+  <li><strong>アナリティクスの読み取り</strong>（<code>yt-analytics.readonly</code>）: 運営者自身のチャンネルの動画ごとの再生回数・視聴時間・視聴維持率などの集計値を読み取り、動画づくりの改善に使います。視聴者個人を特定する情報は含みません。</li>
+</ul>
+
+<h2>AI サービスの利用</h2>
+<ul>
+  <li>コメントへの返信の下書きを作るため、コメントの本文と、その動画の台本を、AI サービス（Anthropic の Claude）に送ります。送ったデータは下書きの作成にだけ使います。</li>
+  <li>Anthropic によるデータの扱いは、<a href="https://www.anthropic.com/legal/privacy">Anthropic のプライバシーポリシー</a> に従います。</li>
 </ul>
 
 <h2>保存と共有</h2>
 <ul>
   <li>OAuth の認証情報は、運営者の端末のパスワード管理ツールにだけ保存します。</li>
-  <li>取得した情報を第三者へ提供・販売することはありません。</li>
+  <li>読み込んだコメントと返信の下書きは、運営者の端末にだけ保存し、<strong>取得から21日を過ぎたものを週1回の処理で削除します（遅くとも取得から28日以内）</strong>。コメントの ID も含めてすべて削除し、YouTube から取り直して保存し続けることはしません。</li>
+  <li>アナリティクスの集計値は、運営者の端末に、必要な間だけ保存します。</li>
+  <li>上記の AI サービスへの送信を除き、取得した情報を第三者へ提供・販売することはありません。</li>
 </ul>
 
 <h2>許可の取り消し</h2>
@@ -37,8 +47,9 @@
 <h2>データの削除</h2>
 <ul>
   <li>許可を取り消した場合、または本ツールの利用を終える場合、運営者は保存している OAuth の認証情報を7日以内に削除します。</li>
-  <li>本ツールが YouTube から取得したデータを保存することはありません。投稿した動画は YouTube Studio からいつでも削除できます。</li>
-  <li>削除のご依頼は、下記のお問い合わせ先から受け付けます。</li>
+  <li>許可の取り消しが分かってから30日以内に、YouTube API サービスから取得したアナリティクスの数値を削除します。</li>
+  <li>コメントと返信の下書きは、上記のとおり取得から28日以内に削除します。投稿した動画と返信は、YouTube Studio からいつでも削除できます。</li>
+  <li>ご自身のコメントのデータの削除のご依頼は、下記のお問い合わせ先から受け付け、7日以内に削除します。</li>
 </ul>
 
 <h2>YouTube と Google の規約</h2>
@@ -50,18 +61,24 @@
 <hr>
 
 <h1>Privacy Policy</h1>
-<p>Last updated: October 9, 2026</p>
-<p>asakura-uploader ("the Tool") is a private tool used only by the operator of the YouTube channel "Asakura Banashi" to upload videos to that channel. There are no other users.</p>
+<p>Last updated: October 12, 2026</p>
+<p>asakura-uploader ("the Tool") is a private tool used only by the operator of the YouTube channel "Asakura Banashi" to run that channel. There are no other users.</p>
+<p>Using YouTube API Services, within the scopes the operator authorized through Google OAuth, the Tool:</p>
 <ul>
-  <li>The Tool uses YouTube API Services and, within the scope authorized through Google OAuth (<code>youtube.upload</code>), sends videos and their titles, descriptions, tags and privacy settings to the operator's own channel.</li>
-  <li>The Tool does not collect or store personal information of any other user or viewer.</li>
-  <li>OAuth credentials are stored only in a password manager on the operator's own device. No data is shared with or sold to third parties.</li>
+  <li><strong>Uploads videos</strong> (<code>youtube.upload</code>): sends videos and their titles, descriptions, tags and privacy settings to the operator's own channel.</li>
+  <li><strong>Replies to comments</strong> (<code>youtube.force-ssl</code>): reads comments on the operator's own videos (comment, thread and video IDs, author display name, text and time) and drafts replies. Only replies that the operator has reviewed and approved one by one are posted. No automated mass replies.</li>
+  <li><strong>Reads analytics</strong> (<code>yt-analytics.readonly</code>): reads aggregate metrics for the operator's own videos, such as views, watch time and audience retention, to improve future videos. No information identifying individual viewers is included.</li>
+</ul>
+<ul>
+  <li>AI service: to draft replies, the comment text and the script of the video are sent to an AI service (Anthropic's Claude) and used only to create drafts. Anthropic handles this data under the <a href="https://www.anthropic.com/legal/privacy">Anthropic Privacy Policy</a>.</li>
+  <li>Storage: OAuth credentials are stored only in a password manager on the operator's own device. Comments and reply drafts are stored only on the operator's device; items older than 21 days are deleted by a weekly job (no later than 28 days after retrieval), including comment IDs, and are not refreshed. Aggregate analytics are stored on the operator's device only as long as necessary.</li>
+  <li>Except for the AI service above, no data is shared with or sold to third parties.</li>
   <li>Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">Google Account permissions</a>.</li>
-  <li>Data deletion: when access is revoked or the Tool is no longer used, the operator deletes the stored OAuth credentials within 7 days. The Tool does not store any data retrieved from YouTube. Uploaded videos can be deleted at any time in YouTube Studio. Deletion requests can be made through the contact below.</li>
+  <li>Data deletion: when access is revoked or the Tool is no longer used, the operator deletes the stored OAuth credentials within 7 days, and deletes analytics retrieved from YouTube API Services within 30 days of learning of the revocation. Comments and drafts are deleted within 28 days as described above. Uploaded videos and replies can be deleted at any time in YouTube Studio. Requests to delete data about your own comments can be made through the contact below and are handled within 7 days.</li>
   <li>By using YouTube API Services, the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> apply.</li>
   <li>Contact: please open an issue at <a href="https://github.com/asakura-banashi/uploader/issues">GitHub Issues</a>.</li>
 </ul>
 
-<footer><a href="index.html">asakura-uploader</a></footer>
+<footer><a href="index.html">asakura-uploader</a> · <a href="terms.html">利用規約 / Terms of Service</a></footer>
 </body>
 </html>
